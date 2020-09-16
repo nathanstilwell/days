@@ -1,2 +1,1 @@
-# daysOfCovid
-A counter for the days of COVID
+_In these strange times, I lose track of days ..._
