@@ -70,7 +70,8 @@
         const timeDiff = (historicDate) => () =>
           Date.now() - historicDate.getTime();
         const sinceCovid = timeDiff(beginCovid);
-        const daysOfCovid = () => Math.floor(sinceCovid() / aDay);
+        const humanOffset = 1; // Humans don't start counting at 0;
+        const daysOfCovid = () => Math.floor(sinceCovid() / aDay) + humanOffset;
         const toNumerals = (num, $ = [], numerals = romanNumerals) => {
           const next = numerals.find((n) => Math.floor(num / n.value));
           if (next) {
