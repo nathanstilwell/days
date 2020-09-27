@@ -15,6 +15,7 @@
       .main {
         background-color: #171212;
         display: flex;
+        flex-direction: column;
         margin: 0;
         padding: 0;
         height: 100vh;
@@ -23,15 +24,22 @@
         align-items: center;
       }
       .counter {
-        color: crimson;
+        color: white;
         font-family: "Special Elite", monospace;
         font-size: 20vw;
+      }
+      .death {
+        color: crimson;
+      }
+      .little {
+        font-size: 8vw;
       }
     </style>
   </head>
   <body>
     <main class="main">
-      <div id="days" class="counter"></div>
+      <div id="covid" class="counter"></div>
+      <div id="death" class="little death counter"></div>
     </main>
 
     <script type="text/javascript">
@@ -39,6 +47,7 @@
         const _ = Math.floor;
         const aDay = 24 * 60 * 60 * 1000;
         const beginCovid = new Date("15 MAR 2020");
+        const deathDay = new Date("27 APR 2020");
         const M = 1000;
         const CM = 900;
         const D = 500;
@@ -67,20 +76,23 @@
           { label: "IV", value: IV },
           { label: "I", value: I },
         ];
-        const timeDiff = (historicDate) => () =>
-          Date.now() - historicDate.getTime();
+        const timeDiff = historicDate => Date.now() - historicDate.getTime();
+        const daysSince = when =>
+          Math.floor(timeDiff(when) / aDay) + humanOffset;
         const sinceCovid = timeDiff(beginCovid);
         const humanOffset = 1; // Humans don't start counting at 0;
-        const daysOfCovid = () => Math.floor(sinceCovid() / aDay) + humanOffset;
+        const daysOfCovid = daysSince(beginCovid);
+        const daysOfMourning = daysSince(deathDay);
         const toNumerals = (num, $ = [], numerals = romanNumerals) => {
-          const next = numerals.find((n) => Math.floor(num / n.value));
+          const next = numerals.find(n => Math.floor(num / n.value));
           if (next) {
             return toNumerals(num - next.value, [...$, next.label]);
           }
           return $.join("");
         };
 
-        doc.getElementById("days").innerText = toNumerals(daysOfCovid());
+        doc.getElementById("covid").innerText = toNumerals(daysOfCovid);
+        doc.getElementById("death").innerText = toNumerals(daysOfMourning);
       })(window, window.document);
     </script>
   </body>
