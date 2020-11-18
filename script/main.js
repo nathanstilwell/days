@@ -14,6 +14,3 @@ const daysOfMourning = daysSince(deathDay);
 
 doc.getElementById("covid").innerText = toNumerals(daysOfCovid);
 doc.getElementById("death").innerText = toNumerals(daysOfMourning);
-
-console.log("loaded date for ", beginCovid)
-console.log("loaded date for ", deathDay)
