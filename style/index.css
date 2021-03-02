@@ -2,6 +2,7 @@ html,
 body {
   margin: 0;
 }
+
 .main {
   background-color: #171212;
   display: flex;
@@ -13,14 +14,17 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .counter {
   color: white;
   font-family: "Special Elite", monospace;
   font-size: 20vw;
 }
+
 .death {
   color: crimson;
 }
+
 .little {
   font-size: 8vw;
 }
