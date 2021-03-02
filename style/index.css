@@ -5,7 +5,9 @@ body {
 
 .main {
   background-color: #171212;
+  color: white;
   display: flex;
+  font-family: "Special Elite", monospace;
   flex-direction: column;
   margin: 0;
   padding: 0;
@@ -15,16 +17,23 @@ body {
   align-items: center;
 }
 
-.counter {
-  color: white;
-  font-family: "Special Elite", monospace;
-  font-size: 20vw;
+.date {
+  color: #7d7d7d;
+  line-height: 2.5;
 }
 
 .death {
   color: crimson;
 }
 
+.big {
+  font-size: 20vw;
+}
+
 .little {
   font-size: 8vw;
+}
+
+.tiny {
+  font-size: 4vw;
 }
