@@ -1,4 +1,3 @@
-const _ = Math.floor;
 const l = console.log;
 
 const M = 1000;
@@ -32,7 +31,7 @@ const romanNumerals = [
 ];
 
 const toNumerals = (num, $ = [], numerals = romanNumerals) => {
-  const next = numerals.find((n) => Math.floor(num / n.value));
+  const next = numerals.find(n => Math.floor(num / n.value));
 
   if (next) {
     return toNumerals(num - next.value, [...$, next.label]);
