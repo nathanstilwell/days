@@ -40,6 +40,13 @@ const daysOfCovid = daysSince(beginCovid);
 doc.getElementById("covid").innerText = toNumerals(daysOfCovid);
 
 /*
+ * Display number of days since returning to the Sanctuary in numerals
+ */
+const welcomeBack = new Date("03 OCT 2021");
+const aNewThing = daysSince(welcomeBack);
+doc.getElementById("resurrection").innerText = toNumerals(aNewThing);
+
+/*
  * In memorial. RIP MDG
  *
 const deathDay = new Date("27 APR 2020");
