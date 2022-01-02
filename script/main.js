@@ -41,10 +41,13 @@ doc.getElementById("covid").innerText = toNumerals(daysOfCovid);
 
 /*
  * Display number of days since returning to the Sanctuary in numerals
- */
+ * // West End Church reopened it's Sancturary on 03 Oct 2021. Due
+ * // to the rise of COVID cases due to Omicron and Delta, we closed
+ * // the Sanctuary again on Christmas 2021 after LXXXIII days.
 const welcomeBack = new Date("03 OCT 2021");
 const aNewThing = daysSince(welcomeBack);
 doc.getElementById("resurrection").innerText = toNumerals(aNewThing);
+*/
 
 /*
  * In memorial. RIP MDG
