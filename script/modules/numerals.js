@@ -31,6 +31,10 @@ const romanNumerals = [
 ];
 
 const toNumerals = (num, $ = [], numerals = romanNumerals) => {
+  if (num < 0) {
+    return toNumerals(Math.abs(num), ["-", ...$]);
+  }
+
   const next = numerals.find(n => Math.floor(num / n.value));
 
   if (next) {
