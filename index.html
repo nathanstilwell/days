@@ -11,9 +11,19 @@
   </head>
   <body>
     <main class="main">
-      <div id="today" class="tiny date"></div>
-      <div id="covid" class="big"></div>
-      <div id="resurrection" class="little rebirth"></div>
+      <div class="moment tiny">
+        <time datetime="2020-03-15">15 MAR 2020</time> - <time datetime="2022-04-17">17 APR 2022</time>,
+        <span
+          data-type="time-span"
+          data-begin="15 MAR 2020"
+          data-end="17 APR 2022"
+        ></span> days
+      </div>
+      <div id="today" class="little date" data-type="now"></div>
+      <div class="moment tiny" data-date="30 JUN 2022">
+        <time datetime="2022-06-30">30 JUN 2022</time>,
+        <span data-type="date" data-date="30 JUN 2022"></span> days left
+      </div>
     </main>
 
     <script type="module" src="./script/modules/numerals.js"></script>
