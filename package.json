@@ -4,8 +4,9 @@
   "description": "Keeping track of days",
   "source": "index.html",
   "scripts": {
-    "start": "parcel",
     "build": "parcel build",
+    "deploy": "parcel build --public-url ./ && gh-pages -d dist -b master -m 'Robot Website'",
+    "start": "parcel",
     "test": "jest"
   },
   "repository": {
@@ -20,6 +21,7 @@
   "homepage": "https://github.com/nathanstilwell/days#readme",
   "devDependencies": {
     "@nathanstilwell/time": "^0.1.2",
+    "gh-pages": "^4.0.0",
     "parcel": "^2.6.2"
   }
 }
