@@ -1,53 +1,9 @@
+import TIME from "@nathanstilwell/time";
+
 import toNumerals from "./modules/numerals.js";
 import formatDate from "./modules/datesSuck.js";
 
-// Convinience
 const doc = window.document;
-const humanOffset = 1; // Humans don't start counting at 0;
-const aDay = 24 * 60 * 60 * 1000;
-
-/*
- * Time calculation
- */
-
-const invalidDateString = (datestring) => isNaN(Date.parse(datestring));
-
-const d = (datestring) => new Date(datestring);
-
-/**
- * @function
- * @name t
- * @param {string} datestring RFC 2822 timestamp
- * @returns {number | null} Date in milliseconds or null if invalid datestring
- */
-const t = (datestring) => invalidDateString(datestring) ? null : d(datestring).getTime();
-
-/**
- * @function
- * @name timeDiff
- * @param {Date} historicDate
- * @return {number} Number of milliseconds difference between historicDate and now
- */
-const timeDiff = historicDate => Date.now() - historicDate.getTime();
-/**
- * @function
- * @name daysSince
- * @param {Date} when
- * @returns {number} Number of days since supplied date
- */
-const daysSince = when => Math.floor(timeDiff(when) / aDay) + humanOffset;
-
-const daysFrom = when => Math.abs(daysSince(when));
-
-/**
- * @function
- * @name daysBetween
- * @param {string} from RFC 2822 timestamp
- * @param {string} to RFC 2822 timestamp
- * @returns {number} Number of days between "from" date and "to" date
- */
-const daysBetween = (from, to) => (t(to) - t(from)) / aDay;
-
 const moments = Array.from(doc.querySelectorAll("[data-type]"));
 
 moments.forEach(m => {
@@ -56,12 +12,12 @@ moments.forEach(m => {
   switch (type) {
     case "time-span": {
       const { begin, end } = m.dataset;
-      m.innerText = toNumerals(daysBetween(begin, end));
+      m.innerText = toNumerals(TIME.daysBetween(begin, end));
       break;
     }
     case "date" : {
       const { date } = m.dataset;
-      m.innerText = toNumerals(daysFrom(d(date)));
+      m.innerText = toNumerals(TIME.daysFrom(TIME.d(date)));
       break;
     }
     case "now":
@@ -69,6 +25,8 @@ moments.forEach(m => {
       break;
   }
 });
+
+console.log('changed');
 
 /*
  * Display number of days since "COVID" in numerals

@@ -1,0 +1,25 @@
+{
+  "name": "nathanstilwell-days",
+  "version": "1.0.0",
+  "description": "Keeping track of days",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathanstilwell/days.git"
+  },
+  "author": "Nathan Stilwell",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/nathanstilwell/days/issues"
+  },
+  "homepage": "https://github.com/nathanstilwell/days#readme",
+  "devDependencies": {
+    "@nathanstilwell/time": "^0.1.2",
+    "parcel": "^2.6.2"
+  }
+}

@@ -11,24 +11,79 @@
   </head>
   <body>
     <main class="main">
-      <div class="moment tiny">
-        <time datetime="2020-03-15">15 MAR 2020</time> - <time datetime="2022-04-17">17 APR 2022</time>,
-        <span
-          data-type="time-span"
-          data-begin="15 MAR 2020"
-          data-end="17 APR 2022"
-        ></span> days
-      </div>
-      <div id="today" class="little date" data-type="now"></div>
-      <div class="moment tiny" data-date="30 JUN 2022">
-        <time datetime="2022-06-30">30 JUN 2022</time>,
-        <span data-type="date" data-date="30 JUN 2022"></span> days left
-      </div>
+      <header>
+        <h1>🐣 Days 💀</h1>
+      </header>
+      <section class="timeline">
+        <div class="moment">
+          <time datetime="2020-03-15">15 MAR 2020</time>
+        </div>
+
+        <div class="moment tiny">
+          <span
+            data-type="time-span"
+            data-begin="15 MAR 2020"
+            data-end="19 APR 2020"
+          ></span> -
+          <time datetime="2022-04-19">(Easter) 2020</time>
+        </div>
+
+        <div class="moment tiny death">
+          <span data-type="time-span" data-begin="15 MAR 2020" data-end="27 APR 2020"></span> -
+          <time datetime="2020-04-27">27 APR 2020</time>
+        </div>
+
+        <div class="moment tiny">
+          <span
+            data-type="time-span"
+            data-begin="15 MAR 2020"
+            data-end="04 MAY 2020"
+          ></span> -
+          <time datetime="2020-05-04">Drive to Florida</time>
+        </div>
+
+        <div class="moment tiny">
+          <span
+            data-type="time-span"
+            data-begin="15 MAR 2020"
+            data-end="25 MAY 2020"
+          ></span> -
+          <time datetime="2020-05-25">George Floyd</time>
+        </div>
+
+        <!-- 15 JUN 2020 - Elected Chair of Consistory -->
+        <!-- 13 JUL 2020 - Matthew's Memorial -->
+
+        <!-- Grandma Stilwell death -->
+        <div class="moment tiny death">
+          <span data-type="time-span" data-begin="15 MAR 2020" data-end="01 AUG 2020"></span> -
+          <time datetime="2020-08-01">01 AUG 2020</time>
+        </div>
+
+        <!-- Started the community fridge -->
+        <!-- Return to New York -->
+        <!-- Middle Church burns -->
+        <!-- CP Exit -->
+
+        <div class="moment tiny rebirth">
+          <span
+            data-type="time-span"
+            data-begin="15 MAR 2020"
+            data-end="17 APR 2022"
+          ></span> -
+          <time datetime="2022-04-17">(Easter) 2022</time>
+        </div>
+
+        <div class="moment tiny" data-date="30 JUN 2022">
+          <time datetime="2016-10-03">03 OCT 2016</time> - <time datetime="2022-06-30">30 JUN 2022</time>
+          (<span data-type="time-span" data-begin="03 OCT 2016" data-end="30 JUN 2022"></span> days)
+        </div>
+
+        <div id="today" class="little date" data-type="now"></div>
+      </section><!-- / .timeline -->
     </main>
 
-    <script type="module" src="./script/modules/numerals.js"></script>
-    <script type="module" src="./script/modules/datesSuck.js"></script>
     <script type="module" src="./script/main.js"></script>
-    <script nomodule type="text/javascript" src="script/fallback.js"></script>
+  <script nomodule type="text/javascript" src="script/fallback.js"></script>
   </body>
 </html>

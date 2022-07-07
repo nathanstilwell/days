@@ -10,11 +10,29 @@ body {
   font-family: "Special Elite", monospace;
   flex-direction: column;
   margin: 0;
-  padding: 2rem 0 0 2rem;
+  padding: 0;
   height: 100vh;
   width: 100vw;
   justify-content: flex-start;
   align-items: flex-start;
+}
+
+header {
+  background-color: black;
+  margin: 0 0 2rem 0;
+  padding: 1rem 0 1rem 2rem;
+  width: 100vw;
+}
+
+h1 { margin: 0; padding: 0; }
+
+.timeline {
+  padding-left: 2rem;
+}
+
+label {
+  display: block;
+  font-size: 2.5rem;
 }
 
 .date {
@@ -32,6 +50,11 @@ body {
 
 .big {
   font-size: 10rem;
+}
+
+.moment {
+  font-size: 5rem;
+  padding: 0.5rem 0;
 }
 
 .little {
