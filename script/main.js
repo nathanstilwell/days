@@ -21,12 +21,11 @@ moments.forEach(m => {
       break;
     }
     case "now":
-      m.innerText = formatDate(new Date());
+      const covidCount = toNumerals(TIME.daysBetween(TIME.d("2020-03-15"), TIME.now()));
+      m.innerText = `${covidCount} - ${formatDate(new Date())}`;
       break;
   }
 });
-
-console.log('changed');
 
 /*
  * Display number of days since "COVID" in numerals
