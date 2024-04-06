@@ -24,7 +24,10 @@ header {
   width: 100vw;
 }
 
-h1 { margin: 0; padding: 0; }
+h1 {
+  margin: 0;
+  padding: 0;
+}
 
 .timeline {
   padding-left: 2rem;
@@ -37,7 +40,7 @@ label {
 
 .date {
   color: #ff79c6;
-  line-height: 2.5;
+  line-height: 1.5;
 }
 
 .death {
@@ -49,7 +52,7 @@ label {
 }
 
 .big {
-  font-size: 10rem;
+  font-size: 8rem;
 }
 
 .moment {

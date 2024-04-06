@@ -12,6 +12,10 @@ moments.forEach(m => {
   switch (type) {
     case "time-span": {
       const { begin, end } = m.dataset;
+      if (end === "now") {
+        m.innerText = toNumerals(TIME.daysBetween(begin, new Date()));
+        break;
+      }
       m.innerText = toNumerals(TIME.daysBetween(begin, end));
       break;
     }
@@ -21,8 +25,7 @@ moments.forEach(m => {
       break;
     }
     case "now":
-      const covidCount = toNumerals(TIME.daysBetween(TIME.d("2020-03-15"), TIME.now()));
-      m.innerText = `${covidCount} - ${formatDate(new Date())}`;
+      m.innerText = formatDate(new Date());
       break;
   }
 });
