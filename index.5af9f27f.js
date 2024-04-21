@@ -687,7 +687,21 @@ exports.export = function(dest, destName, get) {
 },{}],"lSOr2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+const _ = Math.floor;
 const l = console.log;
+const M̅ = 1000000;
+const C̅M̅ = 900000;
+const D̅ = 500000;
+const C̅D̅ = 400000;
+const C̅ = 100000;
+const X̅C̅ = 90000;
+const L̅ = 50000;
+const X̅L̅ = 40000;
+const X̅ = 10000;
+const I̅X̅ = 9000;
+const V̅ = 5000;
+const I̅V̅ = 4000;
+const I̅ = 1000;
 const M = 1000;
 const CM = 900;
 const D = 500;
@@ -702,6 +716,54 @@ const V = 5;
 const IV = 4;
 const I = 1;
 const romanNumerals = [
+    {
+        label: "M\u0305",
+        value: M̅
+    },
+    {
+        label: "C\u0305M\u0305",
+        value: C̅M̅
+    },
+    {
+        label: "D\u0305",
+        value: D̅
+    },
+    {
+        label: "C\u0305D\u0305",
+        value: C̅D̅
+    },
+    {
+        label: "C\u0305",
+        value: C̅
+    },
+    {
+        label: "X\u0305C\u0305",
+        value: X̅C̅
+    },
+    {
+        label: "L\u0305",
+        value: L̅
+    },
+    {
+        label: "X\u0305L\u0305",
+        value: X̅L̅
+    },
+    {
+        label: "X\u0305",
+        value: X̅
+    },
+    {
+        label: "I\u0305X\u0305",
+        value: I̅X̅
+    },
+    {
+        label: "V\u0305",
+        value: V̅
+    },
+    {
+        label: "I\u0305V\u0305",
+        value: I̅V̅
+    },
     {
         label: "M",
         value: M
@@ -756,10 +818,7 @@ const romanNumerals = [
     }, 
 ];
 const toNumerals = (num, $ = [], numerals = romanNumerals)=>{
-    if (num < 0) return toNumerals(Math.abs(num), [
-        "-",
-        ...$
-    ]);
+    console.log(num, $, numerals);
     const next = numerals.find((n)=>Math.floor(num / n.value));
     if (next) return toNumerals(num - next.value, [
         ...$,
